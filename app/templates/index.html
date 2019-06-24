@@ -1,0 +1,63 @@
+{% extends 'base.html'%}
+<!-- styles block -->
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='styles.css')}}">
+      <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Kaushan+Script|Righteous|UnifrakturMaguntia" rel="stylesheet"
+{% endblock %}
+<!-- content block -->
+
+{%block content%}
+      <!-- <h4>{{message}}</h4> -->
+
+      <!-- BBC NEWS  -->
+
+      <div class="container-fluid">
+
+        <div class="home">
+          <div class="text">
+            <span><p id="heading">Get latest news from all over the globe</p></span>
+            <marquee>Factual | Brief&precise | Variety</marquee>
+              <h1 class="text-muted">Highlights</h1>
+          </div>
+        </div>
+        <br><br>
+        <div class="row">
+              <div class="col-sm-4">
+                <h1 id="fonts">News Sources</h1>
+                {% for source in sources %}
+                  <a href="{{source.url}}"     target="_blank" id="link"><button type="button" name="button" class="btn btn-dark" data-animation="ripple" id="source">{{source.name}}</button>
+                  </a>
+                {% endfor %}
+              </div>
+          <div class="col-sm-8">
+            <div class="row" id="hot">
+              <div class="col-sm-12" id="trial">
+                <img src="https://www.faithinhisblood.org/uploads/2/8/5/1/28510639/hot-news_orig.gif" alt="fire">
+                <hr><p id="location">...in Africa!</p><hr>
+              </div>
+            </div>
+            <div class="row">
+              {% for article in articles%}
+              <div class="col-sm-6">
+                <div class="card" style="width:400px" id="card">
+                  <img src="{{article.urlToImage}}" class="card-img-top" alt="{{article.author}}" width="380px">
+                  <div class="card-body">
+                    <h3 class="card-title">{{article.title}}</h3>
+                    <p class="card-text">{{article.description}}</p>
+                    <a href="{{article.url}}"><button type="button" name="button" class="btn btn-dark">Read More...</button></a>
+                    <p class="card-text"><small class="text-muted">Posted on {{article.publishedAt}}</small></p>
+                </div>
+
+              </div>
+              </div>
+
+              {% endfor %}
+            </div>
+
+        </div>
+      </div>
+</div>
+
+{%endblock%}

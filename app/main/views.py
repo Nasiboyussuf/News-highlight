@@ -13,7 +13,6 @@ def index():
     articles = get_articles('kenya')
     title = "All the spice, under one roof"
 
-
     return render_template('index.html', title = title, sources = sources, articles = articles)
 
 @main.route('/news/<int:news_id>')

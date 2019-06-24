@@ -2,6 +2,7 @@ from flask import render_template
 from . import main
 from ..requests import get_sources, get_source, get_articles
 from ..models import Article, Source
+
 #Views
 @main.route('/')
 def index():
@@ -31,5 +32,4 @@ def source(id):
     '''
     source = get_source(id)
     name = f'{source.name}'
-
     return render_template('news.html',name = name, source = source)

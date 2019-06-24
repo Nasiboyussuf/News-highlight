@@ -2,7 +2,6 @@ from app import create_app
 from flask_script import Manager, Server
 from flask import Flask
 
-
 # Creating app instance
 app = create_app('development')
 

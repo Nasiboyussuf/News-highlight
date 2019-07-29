@@ -44,7 +44,7 @@ my contacts below.
 
 ## Contacts
 Feel free to reach out to me
-[Email address](https://mail.google.com/mail)
+[Email address](https://mail.google.com)
 
 Phone number :+254799332404
 ## Licencing
